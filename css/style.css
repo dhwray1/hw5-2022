@@ -1,0 +1,57 @@
+#logo{
+    width: 475px;
+    animation: hw5_move 5s; 
+}
+
+@keyframes hw5_move{
+    from {width:25px;}
+    to {width:475px;}
+}
+
+body{
+    font-family: 'Poppins', serif;
+    background: white; 
+    background-image:url("../images/concrete_seamless.png")
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.nav-links{
+    display: flex; 
+}
+
+a:visited{
+    color: #0000ff;
+}
+
+.card > header{
+    background: #288088;
+    border: #45ADAD solid 2px;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* @media print{ */
+@media screen and (min-width: 1500px){
+    body{
+        font-size: 300%;
+    }
+} 
+
