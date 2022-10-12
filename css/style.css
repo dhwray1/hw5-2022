@@ -4,8 +4,10 @@
 }
 
 @keyframes hw5_move{
-    from {width:25px;}
-    to {width:475px;}
+    from {width:25px;
+    opacity: 0;} 
+    to {width:475px;
+    opacity: 1;}
 }
 
 body{
@@ -48,10 +50,98 @@ a:visited{
     justify-content: center;
 }
 
-/* @media print{ */
-@media screen and (min-width: 1500px){
-    body{
-        font-size: 300%;
-    }
+.gallery > img{
+    border: 10px solid  #50C7C7;
+    margin: 10px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
 } 
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px){
+
+    header, .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+  
+    nav{
+        margin-left: auto;
+    }
+
+    .card > header{
+        justify-content: left;
+    }
+
+    .card, .card > header{
+        flex-basis: 275px;
+    }
+
+    /* .skip + header{
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    } */
+    /* text gets cut off */
+    .skip + header{
+        position: sticky;
+        top: 0px; 
+        z-index: inherit;
+    }
+
+}
+
+@media (prefers-reduced-motion) {
+        #logo {
+          animation: none; 
+        }
+} 
+
+@media print{
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links{
+        display: flex;
+        justify-content: space-around;
+        gap: 100px;
+    }
+
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: bottom;  
+    } 
+    /* adding card makes the cards not align at the bottom */
+
+    .pricing{
+        display: flex;
+        flex-wrap: nowrap; 
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    #gallery, .gallery{
+       display: none;
+    }
+
+    .card li:nth-child(2n)::after{
+        content: '👍';
+        /* display:flex; 
+        flex-direction: column-reverse; */
+    } 
+
+}
 
